@@ -20,4 +20,9 @@
     <ProjectReference Include="..\..\..\BuildingBlocks\Core.Common\Core.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Product\DeleteProduct\" />
+    <Folder Include="Product\UpdateProduct\" />
+  </ItemGroup>
+
 </Project>
