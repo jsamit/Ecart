@@ -401,3 +401,4 @@ FodyWeavers.xsd
 /src/docker-compose.yml
 /src/launchSettings.json
 /src/docker-compose.override.yml
+/src/Services/Catalog/Catalog.API/appsettings.json
