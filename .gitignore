@@ -396,3 +396,8 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/src/docker-compose.dcproj
+/src/.dockerignore
+/src/docker-compose.yml
+/src/launchSettings.json
+/src/docker-compose.override.yml
