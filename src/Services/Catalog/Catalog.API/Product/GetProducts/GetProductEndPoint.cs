@@ -4,9 +4,10 @@ public class GetProductEndPoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("products", async (ISender sender) =>
+        app.MapGet("products", async ([AsParameters] GetProductQuery query, ISender sender) =>
         {
-            return Results.Ok(await sender.Send(new GetProductQuery()));
+
+            return Results.Ok(await sender.Send(query));
         })
         .Produces<GetProductResponse>(StatusCodes.Status201Created)
         .WithDescription("Get Products")

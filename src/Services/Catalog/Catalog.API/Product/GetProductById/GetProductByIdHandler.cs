@@ -14,10 +14,9 @@ namespace Catalog.API.Product.GetProductById
         {
             ProductEO product = (await session.LoadAsync<ProductEO>(request.id,cancellationToken))!;
             if(product != null)
-            {
                 return new GetProductByIdResponse(product);
-            }
-            throw new ProductnotFoundException();
+
+            throw new ProductNotFoundException(request.id);
         }
     }
 }

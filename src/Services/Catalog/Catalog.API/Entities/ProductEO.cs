@@ -10,4 +10,6 @@ public class ProductEO
     public string Description { get; set; } = default!;
     public string ImageFile { get; set; } = default!;
     public List<string> Category { get; set; } = new List<string>();
+    public decimal Price { get; set; }
+    public string Summary { get; set; } = default!;
 }

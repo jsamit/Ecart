@@ -4,7 +4,7 @@ public class CreateProductEndPoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("products",async (CreateProductRequest request, ISender sender) => 
+        app.MapPost("products",async (CreateProductCommand request, ISender sender) => 
         {
             CreateProductResponse response = await sender.Send(request);
             return Results.Created($"products/{response.Id}", response);
