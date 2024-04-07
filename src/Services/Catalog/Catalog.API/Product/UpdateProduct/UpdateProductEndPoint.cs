@@ -3,7 +3,7 @@ using Catalog.API.Extension;
 
 namespace Catalog.API.Product.UpdateProduct;
 
-public record UpdateProductRequestDTO(Guid Id, string Name, string Description, string ImageFile, List<string> Category);
+public record UpdateProductRequestDTO(Guid Id, string Name, string Description, string ImageFile, List<string> Category, string Summary, decimal Price);
 
 public class UpdateProductEndPoint : ICarterModule
 {

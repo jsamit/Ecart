@@ -1,11 +1,10 @@
 ﻿using Catalog.API.Entities;
 using Catalog.API.Exceptions;
 using Core.Common.CQRS;
-using FluentValidation;
 
 namespace Catalog.API.Product.UpdateProduct;
 
-public record UpdateProductCommand(Guid Id,string Name, string Description, string ImageFile, List<string> Category) : ICommand<UpdateProductResponse>;
+public record UpdateProductCommand(Guid Id,string Name, string Description, string ImageFile, List<string> Category, string Summary, decimal Price) : ICommand<UpdateProductResponse>;
 public record UpdateProductResponse(bool isSuccess);
 
 public class UpdateProductCommandValidator : AbstractValidator<UpdateProductCommand>

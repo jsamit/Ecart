@@ -8,13 +8,17 @@ public class ProductDataSeed : IInitialData
 {
     public async Task Populate(IDocumentStore store, CancellationToken cancellation)
     {
-        var session = await store.LightweightSerializableSessionAsync(cancellation);
+        try
+        {
+            using var session = store.LightweightSession();
 
-        if(session.Query<ProductEO>().Any())
-            return ;
+            if (session.Query<ProductEO>().Any())
+                return;
 
-        session.Store<ProductEO>(GetPredefinedProductData());
-        await session.SaveChangesAsync();
+            session.Store<ProductEO>(GetPredefinedProductData());
+            await session.SaveChangesAsync();
+        }
+        catch (Exception ex) { }
     }
 
     private IEnumerable<ProductEO> GetPredefinedProductData()
